@@ -1,0 +1,64 @@
+html, body {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+#command {
+	height:100%;
+	background-color: black
+}
+
+.inputComm {
+	width:auto;
+	margin:0;
+	padding:0;
+	border:0;
+	background-color:black;
+	outline:none;
+	color:rgb(61,249,0);
+	font-family: "Courier New"
+}
+
+.line {
+	display: flex;
+	flex-flow:row nowrap;
+	align-items:flex-start;
+}
+
+.prompt {
+	color:rgb(61,249,0);
+	font-family: "Courier New";
+	white-space: nowrap;
+  	overflow: hidden;
+  	padding-right:5px;
+}
+
+.navbar {
+	background-color: transparent;
+	border:none;
+	height:20px;
+}
+
+.nameAsk {
+	margin-top: 12px;
+	float:right;
+}
+
+.marginTop {
+	margin-top: 40px;
+}
+
+.table {
+	width:50%;
+	margin-top: 20px;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.centeredText {
+	text-align: center;
+}

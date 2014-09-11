@@ -1,0 +1,77 @@
+html(lang="en",data-ng-app="abolio")
+
+head
+    link(href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css",rel="stylesheet")
+    link(href="css/style.css",rel="stylesheet")
+
+body(data-ng-controller="MainCtrl")
+ div.col-xs-4#command
+  div.line#boop
+   div.prompt 
+    | {{name}} 
+    span >
+   input.inputComm
+ div.col-xs-8
+  nav.navbar.navbar-default(role="navigation")
+   div.container-fluid
+    div.collapse.navbar-collapse#bs-example-navbar-collapse-1
+     ul.nav.navbar-nav
+      li
+       a(href="#") Home
+      li
+       a(href="#") About Me
+      li
+       a(href="#") Projects
+      li
+        a(href="#") Contact
+     input.nameAsk(ng-model="name")
+  h3 Welcome to my Personal Webpage
+  h4 My name is Aboli Kumthekar
+
+  h5.marginTop Webpage navigation: HowTo
+  p To your left is a navigation tool, in the form of a command line interface. If you want to navigate normally, you can utlize the navigation bar at the top of the page. But if love the command line as much as I do, then you can type your desired command into the command line.
+  h5.centeredText Legend:
+  table.table.table-striped.centered
+   tr
+    th Command
+    th Navigates to...
+   tr
+    td about
+     td About Me page
+   tr
+    td projects
+    td Projects page
+   tr
+    td contact
+    td Contact Me page
+
+<!-- jQuery Version 1.11.0 -->
+script(src="js/jquery-1.11.0.js")
+
+<!-- Bootstrap Core JavaScript -->
+script(src="js/bootstrap.min.js")
+
+<!-- Angular -->
+script(src="https://code.angularjs.org/1.2.9/angular.min.js")
+script(src="https://code.angularjs.org/1.2.9/angular-route.min.js")
+
+
+<!-- Angular's app.js -->
+script(src="js/app.js")
+
+script.
+
+ $('.inputComm').on("keypress", function( event ) {
+  if(event.keyCode == 13) {
+   var outer = $("div", {class:"line"}); //new line
+   var inner1 = $("div", {class:"prompt",html:"{{name}} > "});
+   var inner2 = $("input", {class:"inputComm"});
+
+   inner1.appendTo(outer);
+   inner2.appendTo(outer);
+	    	
+   $("#boop").before(outer);
+   console.log("HI");
+  }
+ });
+
